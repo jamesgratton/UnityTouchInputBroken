@@ -1,3 +1,4 @@
+#include <mach/mach_time.h>
 #include "UnityAppController+Rendering.h"
 #include "UnityAppController+ViewHandling.h"
 
@@ -8,6 +9,7 @@
 #include "Unity/GlesHelper.h"
 
 #include "UI/UnityView.h"
+#import "Yakuto.h"
 
 
 extern bool	_glesContextCreated;
@@ -21,7 +23,7 @@ extern bool	_didResignActive;
 {
 	int animationFrameInterval = 60.0 / (float)UnityGetTargetFPS();
 	assert(animationFrameInterval >= 1);
-
+    
 	_displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(repaintDisplayLink)];
 	[_displayLink setFrameInterval:animationFrameInterval];
 	[_displayLink addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSRunLoopCommonModes];
@@ -31,10 +33,15 @@ extern bool	_didResignActive;
 {
 	if(!_didResignActive)
 	{
+        Y_RecordFrameStarted();
+
 		[self repaint];
 		[[DisplayManager Instance] presentAllButMain];
 		SetupUnityDefaultFBO(&_mainDisplay->surface);
-	}
+
+        Y_RecordUnityCompleted();
+        Y_LogFrameData();
+    }
 }
 
 - (void)repaint
@@ -48,7 +55,10 @@ extern bool	_didResignActive;
 
 	Profiler_FrameStart();
 	UnityInputProcess();
-	UnityPlayerLoop();
+
+    uint64_t start = mach_absolute_time();
+    UnityPlayerLoop();
+    Y_RecordUnityPlayerLoopFinished(start);
 }
 
 - (void)callbackGfxInited

@@ -170,7 +170,7 @@
 }
 - (void)touchesMoved:(NSSet*)touches withEvent:(UIEvent*)event
 {
-    Y_LogTouchesMoved();
+//    Y_LogTouchesMoved();
 
     UnitySendTouchesMoved(touches, event);
 }
