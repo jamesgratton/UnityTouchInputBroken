@@ -24,7 +24,7 @@ extern bool	_didResignActive;
 
 	_displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(repaintDisplayLink)];
 	[_displayLink setFrameInterval:animationFrameInterval];
-//	[_displayLink addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSRunLoopCommonModes];
+	[_displayLink addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSRunLoopCommonModes];
 }
 
 - (void)repaintDisplayLink
