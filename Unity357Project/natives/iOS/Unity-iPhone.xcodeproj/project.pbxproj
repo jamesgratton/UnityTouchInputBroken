@@ -41,6 +41,7 @@
 		56B7961D1442E1C30026B3DD /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56B796191442E1B80026B3DD /* GameKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		56BCBA390FCF049A0030C3B2 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56BCBA380FCF049A0030C3B2 /* SystemConfiguration.framework */; };
 		56FD43960ED4745200FE3770 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56FD43950ED4745200FE3770 /* CFNetwork.framework */; };
+		60379337F1EC7A4458624A1E /* Yakuto.mm in Sources */ = {isa = PBXBuildFile; fileRef = 6037911AF7E81752F26707B8 /* Yakuto.mm */; };
 		7F36C11113C5C673007FBDD9 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F36C10E13C5C673007FBDD9 /* CoreMedia.framework */; };
 		7F36C11213C5C673007FBDD9 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F36C10F13C5C673007FBDD9 /* CoreVideo.framework */; };
 		7F36C11313C5C673007FBDD9 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F36C11013C5C673007FBDD9 /* AVFoundation.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
@@ -113,6 +114,8 @@
 		56B796191442E1B80026B3DD /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 		56BCBA380FCF049A0030C3B2 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		56FD43950ED4745200FE3770 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		6037911AF7E81752F26707B8 /* Yakuto.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Yakuto.mm; sourceTree = "<group>"; };
+		60379EDC388391B42BB3DBB1 /* Yakuto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Yakuto.h; sourceTree = "<group>"; };
 		7F36C10E13C5C673007FBDD9 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		7F36C10F13C5C673007FBDD9 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
 		7F36C11013C5C673007FBDD9 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -277,6 +280,8 @@
 				D82DCFBC0E8000A5005D6AD8 /* MainWindow.xib */,
 				D82DCFBD0E8000A5005D6AD8 /* RegisterClasses.cpp */,
 				D82DCFBE0E8000A5005D6AD8 /* RegisterClasses.h */,
+				6037911AF7E81752F26707B8 /* Yakuto.mm */,
+				60379EDC388391B42BB3DBB1 /* Yakuto.h */,
 			);
 			path = Classes;
 			sourceTree = SOURCE_ROOT;
@@ -447,6 +452,7 @@
 				D8A1C7280E80637F000160D3 /* RegisterMonoModules.cpp in Sources */,
 				8A2EF43E138549090070AA2F /* iPhone_Profiler.cpp in Sources */,
 				8A2EF57A13856A230070AA2F /* iPhone_GlesSupport.cpp in Sources */,
+				60379337F1EC7A4458624A1E /* Yakuto.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

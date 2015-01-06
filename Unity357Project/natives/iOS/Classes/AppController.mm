@@ -91,6 +91,7 @@
 
 // ENABLE_INTERNAL_PROFILER and related defines were moved to iPhone_Profiler.h
 #include "iPhone_Profiler.h"
+#import "Yakuto.h"
 
 
 // --- CONSTANTS ---------------------------------------------------------------
@@ -864,6 +865,8 @@ void NotifyAutoOrientationChange()
 
 - (void) RepaintDisplayLink
 {
+    Y_RecordFrameStarted();
+
 #if USE_DISPLAY_LINK_IF_AVAILABLE
     [_displayLink setPaused: YES];
 
@@ -873,6 +876,9 @@ void NotifyAutoOrientationChange()
     [_displayLink setPaused: NO];
     [self Repaint];
 #endif
+
+    Y_RecordUnityCompleted();
+    Y_LogFrameData();
 }
 
 - (void) Repaint
@@ -894,8 +900,13 @@ void NotifyAutoOrientationChange()
     Profiler_UnityLoopStart();
 
     UnityInputProcess();
-    UnityPlayerLoop();
 
+
+    uint64_t start = mach_absolute_time();
+    UnityPlayerLoop();
+    Y_RecordUnityPlayerLoopFinished(start);
+
+    
     Profiler_UnityLoopEnd();
     CheckOrientationRequest();
 
