@@ -1,0 +1,8 @@
+Library
+Temp
+natives/iOS/Unity-iPhone Tests
+natives/iOS/.idea
+UserInterfaceState.xcuserstate
+*.pbxuser
+*.xcworkspacedata
+xcschememanagement.plist
