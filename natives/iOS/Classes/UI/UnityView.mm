@@ -4,6 +4,7 @@
 #include "iPhone_OrientationSupport.h"
 #include "Unity/GlesHelper.h"
 #include "Unity/DisplayManager.h"
+#import "Yakuto.h"
 
 @implementation UnityView
 {
@@ -169,7 +170,9 @@
 }
 - (void)touchesMoved:(NSSet*)touches withEvent:(UIEvent*)event
 {
-	UnitySendTouchesMoved(touches, event);
+    Y_LogTouchesMoved();
+
+    UnitySendTouchesMoved(touches, event);
 }
 
 
