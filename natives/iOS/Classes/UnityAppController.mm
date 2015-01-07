@@ -32,6 +32,7 @@
 #include "Unity/EAGLContextHelper.h"
 #include "Unity/GlesHelper.h"
 #include "PluginBase/AppDelegateListener.h"
+#import "Yakuto.h"
 
 
 extern "C" void UnityRunUnitTests();
@@ -219,6 +220,8 @@ void UnityInitJoysticks();
 
 	[self createViewHierarchy];
 	[self preStartUnity];
+
+    Y_RegisterRunLoopObserver();
 
 	return YES;
 }

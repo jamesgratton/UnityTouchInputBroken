@@ -7,6 +7,7 @@ void Y_LogFrameData();
 void Y_RecordFrameStarted();
 void Y_RecordUnityCompleted();
 void Y_RecordUnityPlayerLoopFinished(uint64_t start);
+void Y_RegisterRunLoopObserver();
 double Y_ToMS(uint64_t t);
 void Y_LogTouchesMoved();
 
